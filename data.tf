@@ -21,7 +21,7 @@ data "aws_ami" "joindevops" {
 
 # SG id
 data "aws_ssm_parameter" "sg_id" {
-  name = "/${var.project}/${var.environment}/{var.component}-sg-id"  #/roboshop/dev/component-sg-id
+  name = "/${var.project}/${var.environment}/${var.component}-sg-id"  #/roboshop/dev/component-sg-id
 }
 
 # Both frontend and backend we place in private subnets 
