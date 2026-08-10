@@ -10,7 +10,7 @@ resource "aws_instance" "main"{
     
     local.common_tags,
     {
-        Name= "${local.common_name}-{var.component}"
+        Name= "${local.common_name}-${var.component}"
     }
   )
 }
@@ -51,7 +51,7 @@ resource "aws_ec2_instance_state" "main" {
 
 # Taking component image
 resource "aws_ami_from_instance" "main" {
-  name               = "${local.common_name}-{var.component}-ami"
+  name               = "${local.common_name}-${var.component}-ami"
   source_instance_id = aws_instance.main.id
   depends_on = [aws_ec2_instance_state.main]
   tags = merge (
