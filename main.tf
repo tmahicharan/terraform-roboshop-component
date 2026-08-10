@@ -202,7 +202,7 @@ resource "aws_lb_listener_rule" "main" {
 }
 
 # Delete the instance after taking image
-resource "terraform_data" "main" {
+resource "terraform_data" "main_local" {
   triggers_replace = [
     aws_instance.main.id
   ]
