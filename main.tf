@@ -91,6 +91,9 @@ resource "aws_launch_template" "main" {
   instance_initiated_shutdown_behavior = "terminate"
   instance_type = "t3.micro"
   vpc_security_group_ids = [local.sg_id]
+  iam_instance_profile {
+    name = "bastion"
+  }
   # when we run terraform apply again, a new version will be created with new AMI ID
   update_default_version = true
 
