@@ -4,7 +4,7 @@ resource "aws_instance" "main"{
     instance_type = "t3.micro"
     vpc_security_group_ids=[local.sg_id]
     subnet_id=local.private_subnet_ids[0]
-    iam_instance_profile = aws_iam_instance_profile.components.name
+    iam_instance_profile = var.instance_profile
     
     tags = merge (
     
