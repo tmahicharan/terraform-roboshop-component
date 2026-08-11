@@ -92,7 +92,7 @@ resource "aws_launch_template" "main" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [local.sg_id]
   iam_instance_profile {
-    name = "bastion"
+    name = var.instance_profile
   }
   # when we run terraform apply again, a new version will be created with new AMI ID
   update_default_version = true
