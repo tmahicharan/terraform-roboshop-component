@@ -21,5 +21,5 @@ variable "domain_name" {
 }
 
 variable "instance_profile" {
-  
+  default = null
 }
